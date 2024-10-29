@@ -14,40 +14,52 @@
 <body>
     <div class="main-container">
 		<header>
-            <img src="">
+            <img src="./assets/images/logo.png" alt="Logo JustStreamIt" class="logo">
 			<h1>Vidéos à la demande</h1>
 		</header>
 		<main>
 			<section id="bestmovie">
 				<h2>Meilleur film</h2>
-                <div class="best_movie">
+                <div class="best-movie">
                 </div>
 			</section>
 			<section id="category1">
-				<h2>Category 1</h2>
-                <div class = "card_wrapper">
+				<h2>Fantasy</h2>
+                <div class = "card-wrapper">
+                    <div class="card">
+                        <div class="card-overlay">
+                            <h3>Titre du film</h3>
+                            <button class="overlay-detail">Détails</button>
+                        </div>
+                    </div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
                     <div class="card"></div>
                 </div>
 			</section>
             <section id="category2">
-				<h2>Category 2</h2>
-                <div class = "card_wrapper">
-                    <div class="card"></div>
+				<h2>Sci-Fi</h2>
+                <div class = "card-wrapper">
+
                 </div>
 			</section>
             <section id="category3">
-				<h2>Category 3</h2>
-                <div class = "card_wrapper">
-                    <div class="card"></div>
+				<h2>Adventure</h2>
+                <div class = "card-wrapper">
+
                 </div>
 			</section>
 			<section id="other">
-                <div class = "other_select">
-                    <h2>Autres</h2>
-                    <select name="cat_select" id="cat_select"></select>
+                <div class = "other-select">
+                    <h2>Autres :</h2>
+                    <select name="cat-select" id="cat-select">
+                        <option value="none">Choisissez une catégorie à afficher</option>
+                    </select>
                 </div>
-                <div class = "card_wrapper">
-                    <div class="card"></div>
+                <div class = "card-wrapper">
+
                 </div>
 			</section>
 		</main>
