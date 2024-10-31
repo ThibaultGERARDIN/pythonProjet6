@@ -3,19 +3,27 @@ import { fetchMovies } from "./fetchmovies.js";
 // fonction qui créer les vignettes de la catégorie choisie
 export async function createVignette(category) {
 
-    const fetchUrlPageOne = `http://localhost:8000/api/v1/titles/?genre_contains=${category}&sort_by=-imdb_score`
-    const fetchUrlPageTwo = `http://localhost:8000/api/v1/titles/?genre_contains=${category}&page=2&sort_by=-imdb_score`
-    const location = document.querySelector(`#${category} .card-wrapper`)
-    location.innerHTML = "";
+    const fetchUrl = `http://localhost:8000/api/v1/titles/?genre_contains=${category}&sort_by=-imdb_score`
+
+    let location = document.querySelector(`#${category} .card-wrapper`)
+    if (location) {
+        location.innerHTML = "";
+    }
+    else {
+        location = document.querySelector(`#other .card-wrapper`);
+        location.innerHTML = "";
+    }
+        
     
     // récupère les films de la catégorie donnée (triés par note) sur l'API et les stocke dans une variable
-    const getMoviesPageOne = await fetchMovies(fetchUrlPageOne);
-    const getMoviesPageTwo = await fetchMovies(fetchUrlPageTwo);
+    const getMovies = await fetchMovies(fetchUrl);
+    let movies = getMovies.results;
 
-
-    let movies = getMoviesPageOne.results;
-    movies.push(getMoviesPageTwo.results[0])
-
+    // const getMoviesPageTwo = await fetchMovies(fetchUrlPageTwo);
+    if (getMovies.next) {
+        let pageTwo = await fetchMovies(getMovies.next)
+        movies.push(pageTwo.results[0])
+    }
 
     // créé les éléments HTML et les rempli avec les données récupérées grâce à l'API
     for (let i = 0; i < movies.length; i++) {

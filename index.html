@@ -18,21 +18,14 @@
 			<h1>Vidéos à la demande</h1>
 		</header>
 		<main>
+            <dialog>
+                <div class="modale">
+
+                </div>
+            </dialog>
 			<section id="bestmovie">
 				<h2>Meilleur film</h2>
                 <div class="best-movie">
-                    <div class="best-img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="best-text">
-                        <h2>Best movie title</h2>
-                        <p class="best-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Soluta debitis voluptate animi mollitia quam ipsum dignissimos sint explicabo consequuntur, 
-                        enim veritatis perferendis iusto, atque non unde odio vel eligendi voluptatibus.
-                        </p>
-                        <button class="best-details">Détails</button>
-                    </div>
                 </div>
 			</section>
 			<section id="Fantasy">
@@ -54,11 +47,34 @@
                 <div class = "other-select">
                     <h2>Autres :</h2>
                     <select name="cat-select" id="cat-select">
-                        <option value="none">Catégorie</option>
+                        <option value="" selected="selected">Catégorie</option>
+                        <option value="Action">Films d'action</option>
+                        <option value="Adult">Films pour adultes</option>
+                        <option value="Animation">Films d'animation</option>
+                        <option value="Biography">Biographie</option>
+                        <option value="Comedy">Comédie</option>
+                        <option value="Crime">Crime</option>
+                        <option value="Documentary">Documentaire</option>
+                        <option value="Drama">Drame</option>
+                        <option value="Film-Noir">Film-Noir</option>
+                        <option value="History">Film historique</option>
+                        <option value="Horror">Film d'horreur</option>
+                        <option value="Music">Musique</option>
+                        <option value="Musical">Comédie musicale</option>
+                        <option value="Mystery">Mystère</option>
+                        <option value="News">Informations</option>
+                        <option value="Reality-TV">Télé-réalité</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Sport">Film de sport</option>
+                        <option value="Thriller">Film à suspense</option>
+                        <option value="War">Film de guerre</option>
+                        <option value="Western">Western</option>
                     </select>
                 </div>
                 <div class = "card-wrapper">
-
+                    <div class="other-placeholder">
+                        <h2>Sélectionnez une catégorie à afficher</h2>
+                    </div>
                 </div>
 			</section>
 		</main>
