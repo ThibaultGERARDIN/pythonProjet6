@@ -34,6 +34,7 @@ export async function bestMovie() {
 
     const textContainer = document.createElement("div");
     textContainer.className = "best-text";
+    textContainer.id = bestMovie.id
     textContainer.innerHTML = `<button class="best-details">Détails</button>`
 
     const bestTitle = document.createElement("h2");
