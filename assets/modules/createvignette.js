@@ -36,6 +36,10 @@ export async function createVignette(category) {
         imgVignette.alt = vignette.title;
         imgVignette.className = "vignette-img";
         imgVignette.id = vignette.id;
+        imgVignette.addEventListener("error", function(event) {
+            event.target.src = "./assets/images/defaultimg.png"
+            event.onerror = null
+          })
 
         // idem pour le conteneur de l'image et l'overlay
         const card = document.createElement("div");

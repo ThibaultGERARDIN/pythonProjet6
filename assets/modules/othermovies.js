@@ -7,9 +7,16 @@ export function otherMovies() {
 
     select.addEventListener("change", (event) => {
         event.preventDefault();
+        let highlight = document.querySelector(".selected-option")
+        if (highlight) {
+            highlight.classList =""
+        }
         let selectedCategory = select.value
+        
         if (selectedCategory !== "") {
-            createVignette(selectedCategory)      
+            createVignette(selectedCategory)  
+            let selectedOption = document.querySelector(`option[value=${selectedCategory}]`)
+            selectedOption.classList = "selected-option"    
         }
         else {
             let otherSpace = document.querySelector("#other .card-wrapper")
