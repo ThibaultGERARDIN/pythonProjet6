@@ -61,7 +61,6 @@ table {
     flex-direction: column;
     gap: 50px;
     align-items: start;
-    padding: 0 105px;
     box-sizing: border-box;
 }
 
@@ -108,6 +107,8 @@ span {
 }
 
 header {
+    margin: auto;
+    max-width: 844px;
     background-color: #61787F;
     border: solid 1px black;
     margin-top: 40px;
@@ -120,7 +121,9 @@ header {
 }
 
 main {
+    margin: auto;
     width: 100%;
+    max-width: 844px;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -133,10 +136,12 @@ main {
 
 section {
     width: 100%;
+    max-width: 844px;
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
+
 .best-movie {
     width: 100%;
     height: 369px;
@@ -148,7 +153,7 @@ section {
 }
 
 .best-img {
-    height: 334px;
+    height: 100%;
     width: 227px;
 }
 
@@ -158,10 +163,10 @@ section {
     object-fit: cover;
 }
 
-
-
 .best-text {
+    position: relative;
     width: 540px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -170,10 +175,13 @@ section {
 .best-description {
     font-size: 28px;
     font-weight: 200;
+    line-height: 40px;
 }
 
 .best-details {
-    align-self: flex-end;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     height: 68px;
     width: 168px;
     border: none;
@@ -190,8 +198,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
-    gap: 44px
-
+    gap: 44px;
 }
 
 .card {
@@ -209,7 +216,7 @@ section {
 
 .card-overlay {
     position: absolute;
-    top: 50px;
+    top: 20%;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -330,4 +337,163 @@ dialog::backdrop {
 
 .selected-option {
     background-color: rgb(32, 189, 32, 0.6);
+}
+
+@media (max-width: 1024px) {
+    .main-container {
+        max-width: 788px;
+        gap: 30px;
+    }
+
+    header {
+        max-width: 610px;
+        padding: 11px 20px; 
+    }
+
+    .logo {
+        height: 113px;
+    }
+
+    main {
+        max-width: 610px;
+        gap: 30px;
+    }
+
+    section {
+        max-width: 610px;
+        gap: 30px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    .best-movie {
+        height: 271px;
+        gap: 20px;
+        padding: 6px 10px;
+        box-sizing: border-box;
+    }
+    .best-text {
+        width: 500px;
+        gap: 10px;
+    }
+
+    .best-description {
+        font-size: 24px;
+        line-height: 35px;
+    }
+
+    .best-details {
+        height: 49px;
+        width: 123px;
+        font-size: 20px;
+    }
+
+    .card {
+        width: 290px;
+        height: 290px;
+    }
+    .card-wrapper {
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .card-overlay {
+        height: 118px;
+    }
+
+    select {
+        height: 60px;
+        width: 400px;
+        font-size: 32px;
+    }
+}
+
+
+@media (max-width: 788px) {
+    .main-container {
+        max-width: 460px;
+        gap: 20px;
+    }
+
+    header {
+        justify-content: center;
+        max-width: 330px;
+        padding: 2.5px; 
+    }
+
+    .logo {
+        height: 130px;
+    }
+
+    main {
+        max-width: 330px;
+    }
+
+    section {
+        background-color: white;        
+        align-items: center;
+        max-width: 330px;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .best-movie {
+        height: 463px;
+        flex-direction: column;
+        gap: 20px;
+        padding: 6px 10px;
+        box-sizing: border-box;
+    }
+    
+    .best-img {
+        width: 100%;
+        height: 240px;
+    }
+
+    .best-text {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .best-description {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .best-details {
+        height: 40px;
+        width: 91px;
+        font-size: 14px;
+        right: 103px;
+    }
+
+    .card {
+        width: 330px;
+        height: 330px;
+    }
+    .card-wrapper {
+        justify-content: space-between;
+        gap: 30px;
+    }
+    .card-overlay {
+        height: 128px;
+    }
+
+    select {
+        height: 68px;
+        max-width: 330px;
+        font-size: 28px;
+    }
+
+    #other h2 {
+        display: none;
+    }
 }
