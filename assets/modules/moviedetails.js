@@ -20,8 +20,15 @@ export async function movieDetails(targetMovieId, location) {
             event.target.src = "./assets/images/defaultimg.png"
             event.onerror = null
           })
+        
+        const imgDetailMobile = imgDetail.cloneNode()
+        imgDetailMobile.id = ""
+        imgDetailMobile.className = "detail-img-mobile"
+        imgDetailMobile.addEventListener("error", function(event) {
+          event.target.src = "./assets/images/defaultimg.png"
+          event.onerror = null
+        })
 
-        // idem pour le conteneur de l'image et l'overlay
         const movieInfo = document.createElement("div");
         movieInfo.className = "movie-info";
         movieInfo.innerHTML = 
@@ -49,5 +56,6 @@ export async function movieDetails(targetMovieId, location) {
         location.append(movieInfo);
         location.append(imgDetail);
         location.append(movieDescription);
+        movieDescription.append(imgDetailMobile)
         location.append(movieActors);
 }

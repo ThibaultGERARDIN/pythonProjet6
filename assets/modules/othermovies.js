@@ -19,12 +19,15 @@ export function otherMovies() {
             selectedOption.classList = "selected-option"    
         }
         else {
-            let otherSpace = document.querySelector("#other .card-wrapper")
-            otherSpace.innerHTML = ""
+            let container = document.querySelector(`#other .category-container`)
+            container.innerHTML = "";
+            let wrapper = document.createElement("div")
+            wrapper.className = "card-wrapper"
+            container.append(wrapper)
             let placeHolder = document.createElement("div")
             placeHolder.className = "other-placeholder"
             placeHolder.innerHTML = "<h2>Sélectionnez une catégorie à afficher</h2>"
-            otherSpace.append(placeHolder)
+            wrapper.append(placeHolder)
         }
     })
 }
