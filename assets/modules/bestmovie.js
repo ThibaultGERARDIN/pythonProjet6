@@ -1,53 +1,49 @@
-import { fetchMovies } from "./fetchmovies.js";
+import { fetchMovies } from './fetchmovies.js'
 
-// fonction qui créer les vignettes de la catégorie choisie
+// Function that creates the bestmovie section
 export async function bestMovie() {
+  const fetchUrl = `http://localhost:8000/api/v1/titles/?sort_by=-imdb_score`
 
-    const fetchUrl = `http://localhost:8000/api/v1/titles/?sort_by=-imdb_score`
+  const location = document.querySelector(`#bestmovie .best-movie`)
+  location.innerHTML = ''
 
-    const location = document.querySelector(`#bestmovie .best-movie`)
-    location.innerHTML = "";
+  // fetch all movies sorted by best score
+  const getBestScore = await fetchMovies(fetchUrl)
 
-    // récupère les films par score décroissant
-    const getBestScore = await fetchMovies(fetchUrl);
+  // gets best score value
+  let bestScore = getBestScore.results[0].imdb_score
 
-    // récupère le score maximal
-    let bestScore = getBestScore.results[0].imdb_score
+  // fetch all movies that have the best score and sort them by number of votes
+  const fetchBestMovieUrl = `http://localhost:8000/api/v1/titles/?imdb_score=${bestScore}&sort_by=-votes`
+  const getBestMovie = await fetchMovies(fetchBestMovieUrl)
 
-    // récupère les films avec score max, triés par nombre de votes (pour avoir le meilleur résultat)
-    const fetchBestMovieUrl = `http://localhost:8000/api/v1/titles/?imdb_score=${bestScore}&sort_by=-votes`
+  // gets the movie with the most number of votes and best score and fetch detailed information
+  const fetchBestMovieDetailUrl = getBestMovie.results[0].url
+  const bestMovie = await fetchMovies(fetchBestMovieDetailUrl)
 
-    const getBestMovie = await fetchMovies(fetchUrl);
+  // Creates DOM elements with all relevent attributes / values
+  const imgBest = document.createElement('img')
+  imgBest.src = bestMovie.image_url
+  imgBest.alt = bestMovie.title
 
-    const fetchBestMovieDetailUrl = getBestMovie.results[0].url
+  const imgContainer = document.createElement('div')
+  imgContainer.className = 'best-img'
 
-    const bestMovie = await fetchMovies(fetchBestMovieDetailUrl);
-  
-    // création de l'image avec les attributs nécessaires
-    const imgBest = document.createElement("img");
-    imgBest.src = bestMovie.image_url;
-    imgBest.alt = bestMovie.title;
+  const textContainer = document.createElement('div')
+  textContainer.className = 'best-text'
+  textContainer.id = bestMovie.id
+  textContainer.innerHTML = `<button class="best-details">Détails</button>`
 
-    // idem pour le conteneur de l'image et du texte
-    const imgContainer = document.createElement("div");
-    imgContainer.className = "best-img";
+  const bestTitle = document.createElement('h2')
+  bestTitle.innerText = bestMovie.title
+  const bestDescription = document.createElement('p')
+  bestDescription.className = 'best-description'
+  bestDescription.innerText = bestMovie.description
 
-    const textContainer = document.createElement("div");
-    textContainer.className = "best-text";
-    textContainer.id = bestMovie.id
-    textContainer.innerHTML = `<button class="best-details">Détails</button>`
-
-    const bestTitle = document.createElement("h2");
-    bestTitle.innerText = bestMovie.title;
-    const bestDescription = document.createElement("p");
-    bestDescription.className = "best-description";
-    bestDescription.innerText = bestMovie.description;
-
-    // génère les éléments dans le code html
-    location.append(imgContainer);
-    location.append(textContainer);
-    imgContainer.append(imgBest);
-    textContainer.prepend(bestDescription);       
-    textContainer.prepend(bestTitle);
-
+  // add all created DOM elements to the HTML code
+  location.append(imgContainer)
+  location.append(textContainer)
+  imgContainer.append(imgBest)
+  textContainer.prepend(bestDescription)
+  textContainer.prepend(bestTitle)
 }

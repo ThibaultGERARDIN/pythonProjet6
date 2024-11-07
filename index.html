@@ -1,95 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JustStreamIt</title>
-    <meta name="description" content="JustStreamIt est une application web permettant de visualiser en temps réel un classement de films intéressants">
+    <meta
+      name="description"
+      content="JustStreamIt est une application web permettant de visualiser en temps réel un classement de films intéressants">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="./assets/style.css">
-	<script type="module" src="./assets/script.js"></script>
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="./assets/style.css">
+    <script type="module" src="./assets/script.js"></script>
+  </head>
+  <body>
     <div class="main-container">
-		<header>
-            <img src="./assets/images/logo.png" alt="Logo JustStreamIt" class="logo">
-			<h1>Vidéos à la demande</h1>
-		</header>
-		<main>
-            <dialog>
-                <div class="modale">
-                    <div class= "movie-details">
-                    </div>
-                    <button id="close">Fermer</button>
-                </div>
-            </dialog>
-			<section id="bestmovie">
-				<h2>Meilleur film</h2>
-                <div class="best-movie">
-                </div>
-			</section>
-			<section id="Fantasy">
-				<h2>Fantasy</h2>
-                <div class= "category-container">
-                    <div class = "card-wrapper">
-                    </div>
-                </div>
-			</section>
-            <section id="Sci-Fi">
-				<h2>Sci-Fi</h2>
-                <div class= "category-container">
-                    <div class = "card-wrapper">
-                    </div>
-                </div>
-			</section>
-            <section id="Adventure">
-				<h2>Adventure</h2>
-                <div class= "category-container">
-                    <div class = "card-wrapper">
-                    </div>
-                </div>
-			</section>
-			<section id="other">
-                <div class = "other-select">
-                    <h2 class="other-title">Autres :</h2>
-                    <select name="cat-select" id="cat-select">
-                        <option value="" selected="selected">Catégorie</option>
-                        <option value="Action">Films d'action</option>
-                        <option value="Adult">Films pour adultes</option>
-                        <option value="Animation">Films d'animation</option>
-                        <option value="Biography">Biographie</option>
-                        <option value="Comedy">Comédie</option>
-                        <option value="Crime">Crime</option>
-                        <option value="Documentary">Documentaire</option>
-                        <option value="Drama">Drame</option>
-                        <option value="Film-Noir">Film-Noir</option>
-                        <option value="History">Film historique</option>
-                        <option value="Horror">Film d'horreur</option>
-                        <option value="Music">Musique</option>
-                        <option value="Musical">Comédie musicale</option>
-                        <option value="Mystery">Mystère</option>
-                        <option value="News">Informations</option>
-                        <option value="Reality-TV">Télé-réalité</option>
-                        <option value="Romance">Romance</option>
-                        <option value="Sport">Film de sport</option>
-                        <option value="Thriller">Film à suspense</option>
-                        <option value="War">Film de guerre</option>
-                        <option value="Western">Western</option>
-                    </select>
-                </div>
-                <div class= "category-container">
-                    <div class = "card-wrapper">
-                        <div class="other-placeholder">
-                            <h2>Sélectionnez une catégorie à afficher</h2>
-                        </div>
-                    </div>
-                </div>
-			</section>
-		</main>
-	</div>
-	<footer>
-	</footer>
-</body>
+      <header>
+        <img
+          src="./assets/images/logo.png"
+          alt="Logo JustStreamIt"
+          class="logo"
+        >
+        <h1>Vidéos à la demande</h1>
+      </header>
+      <main>
+        <dialog>
+          <div class="modale">
+            <div class="movie-details"></div>
+            <button id="close">Fermer</button>
+          </div>
+        </dialog>
+        <section id="bestmovie">
+          <h2>Meilleur film</h2>
+          <div class="best-movie"></div>
+        </section>
+        <section id="Fantasy">
+          <h2>Fantasy</h2>
+          <div class="category-container">
+            <div class="card-wrapper"></div>
+          </div>
+        </section>
+        <section id="Sci-Fi">
+          <h2>Sci-Fi</h2>
+          <div class="category-container">
+            <div class="card-wrapper"></div>
+          </div>
+        </section>
+        <section id="Adventure">
+          <h2>Adventure</h2>
+          <div class="category-container">
+            <div class="card-wrapper"></div>
+          </div>
+        </section>
+        <section id="other">
+          <div class="other-select">
+            <h2 class="other-title">Autres :</h2>
+            <select name="cat-select" id="cat-select">
+              <option value="" selected="selected">Catégorie</option>
+              <option value="Action">Films d'action</option>
+              <option value="Adult">Films pour adultes</option>
+              <option value="Animation">Films d'animation</option>
+              <option value="Biography">Biographie</option>
+              <option value="Comedy">Comédie</option>
+              <option value="Crime">Crime</option>
+              <option value="Documentary">Documentaire</option>
+              <option value="Drama">Drame</option>
+              <option value="Film-Noir">Film-Noir</option>
+              <option value="History">Film historique</option>
+              <option value="Horror">Film d'horreur</option>
+              <option value="Music">Musique</option>
+              <option value="Musical">Comédie musicale</option>
+              <option value="Mystery">Mystère</option>
+              <option value="News">Informations</option>
+              <option value="Reality-TV">Télé-réalité</option>
+              <option value="Romance">Romance</option>
+              <option value="Sport">Film de sport</option>
+              <option value="Thriller">Film à suspense</option>
+              <option value="War">Film de guerre</option>
+              <option value="Western">Western</option>
+            </select>
+          </div>
+          <div class="category-container">
+            <div class="card-wrapper">
+              <div class="other-placeholder">
+                <h2>Sélectionnez une catégorie à afficher</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer></footer>
+  </body>
 </html>
